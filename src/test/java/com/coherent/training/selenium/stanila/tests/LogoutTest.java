@@ -4,8 +4,8 @@ import com.coherent.training.selenium.stanila.base.DriverFactory;
 import com.coherent.training.selenium.stanila.base.pages.LogoutPOM;
 import com.coherent.training.selenium.stanila.tests.base.BaseTest;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class LogoutTest extends BaseTest {
     WebDriver driver;
@@ -15,13 +15,11 @@ public class LogoutTest extends BaseTest {
 
     @Test
     public void logoutTest(){
-        SoftAssert softAssert = new SoftAssert();
         driver = DriverFactory.getDriver();
         logoutPOM = new LogoutPOM(driver);
 
         logoutPOM.logout(USERNAME_CREDENTIAL,PASSWORD_CREDENTIAL);
 
-        softAssert.assertTrue(logoutPOM.textForAssertIsDisplayed(),"Text for Assert isn't displayed.");
-        softAssert.assertAll();
+        Assert.assertTrue(logoutPOM.textForAssertIsDisplayed(),"Text for Assert isn't displayed.");
     }
 }

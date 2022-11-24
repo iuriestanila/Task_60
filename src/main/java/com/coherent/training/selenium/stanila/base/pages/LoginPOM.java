@@ -1,6 +1,7 @@
 package com.coherent.training.selenium.stanila.base.pages;
 
 import com.coherent.training.selenium.stanila.base.BasePOM;
+import com.coherent.training.selenium.stanila.base.DriverFactory;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,8 +25,6 @@ public class LoginPOM extends BasePOM {
 
     @SneakyThrows
     public void login(String userName, String pswd){
-        driver.get("https://mail.yandex.com/");
-
         loginFirst.click();
         username.sendKeys(userName);
         login.click();

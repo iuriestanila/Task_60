@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LogoutPage extends BasePOM {
+public class LogoutPOM extends BasePOM {
     @FindBy(xpath = "//button[starts-with(@class,'Button2')]")
     private WebElement loginFirst;
     @FindBy(xpath = "//input[@id='passp-field-login']")
@@ -23,7 +23,7 @@ public class LogoutPage extends BasePOM {
     private WebElement logout;
     String URL = "https://mail.yandex.com/";
 
-    public LogoutPage(WebDriver driver) {
+    public LogoutPOM(WebDriver driver) {
         super(driver);
     }
 

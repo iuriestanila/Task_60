@@ -9,11 +9,11 @@ import org.openqa.selenium.support.FindBy;
 public class LogoutPOM extends BasePOM {
     @FindBy(xpath = "//button[starts-with(@class,'Button2')]")
     private WebElement loginFirst;
-    @FindBy(xpath = "//input[@id='passp-field-login']")
+    @FindBy(id = "passp-field-login")
     private WebElement username;
-    @FindBy(xpath = "//button[@id='passp:sign-in']")
+    @FindBy (id= "passp:sign-in")
     private WebElement login;
-    @FindBy(xpath = "//input[@id='passp-field-passwd']")
+    @FindBy(id = "passp-field-passwd")
     private WebElement password;
     @FindBy(xpath = "//a[@role='button']//img")
     private WebElement image;

@@ -2,6 +2,7 @@ package com.coherent.training.selenium.stanila.tests;
 
 import com.coherent.training.selenium.stanila.base.DriverFactory;
 import com.coherent.training.selenium.stanila.base.pages.LoginPOM;
+import com.coherent.training.selenium.stanila.base.utils.Screenshot;
 import com.coherent.training.selenium.stanila.tests.base.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -22,5 +23,6 @@ public class LoginTest extends BaseTest {
         loginPOM.login(USERNAME_CREDENTIAL,PASSWORD_CREDENTIAL);
 
         Assert.assertTrue(loginPOM.composeIsDisplayed(),"Compose button isn't displayed.");
+        Screenshot.screenshotPerform(driver,"1");
     }
 }

@@ -1,6 +1,7 @@
 package com.coherent.training.selenium.stanila.base.pages;
 
 import com.coherent.training.selenium.stanila.base.BasePOM;
+import com.coherent.training.selenium.stanila.base.utils.Screenshot;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,6 +36,8 @@ public class LogoutPOM extends BasePOM {
         login.click();
         password.sendKeys(pswd);
         login.click();
+        Thread.sleep(4000);
+        Screenshot.screenshotPerform(driver,"2");
         image.click();
         logout.click();
     }

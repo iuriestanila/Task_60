@@ -1,4 +1,4 @@
-package com.coherent.training.selenium.stanila.base;
+package com.coherent.training.selenium.stanila.base.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

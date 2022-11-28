@@ -1,14 +1,13 @@
 package com.coherent.training.selenium.stanila.base.pages;
 
-import com.coherent.training.selenium.stanila.base.BasePOM;
-import com.coherent.training.selenium.stanila.base.utils.Screenshot;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LogoutPOM extends BasePOM {
-    @FindBy(xpath = "//button[starts-with(@class,'Button2')]")
+    @FindBy(xpath = "//button[@class='Button2 Button2_size_m Button2_view_orange " +
+            "Button2_weight_500 Button_3YGxEShvAi7lB8DLgdG3y8 PSHeader-NoLoginButton']")
     private WebElement loginFirst;
     @FindBy(id = "passp-field-login")
     private WebElement username;
@@ -22,7 +21,6 @@ public class LogoutPOM extends BasePOM {
     private WebElement textForAssert;
     @FindBy(xpath = "//span[normalize-space()='Log out']")
     private WebElement logout;
-    String URL = "https://mail.yandex.com/";
 
     public LogoutPOM(WebDriver driver) {
         super(driver);
@@ -30,14 +28,12 @@ public class LogoutPOM extends BasePOM {
 
     @SneakyThrows
     public void logout(String usname, String pswd){
-        driver.get(URL);
         loginFirst.click();
         username.sendKeys(usname);
         login.click();
         password.sendKeys(pswd);
         login.click();
         Thread.sleep(4000);
-        Screenshot.screenshotPerform(driver,"2");
         image.click();
         logout.click();
     }

@@ -1,4 +1,4 @@
-package com.coherent.training.selenium.stanila.tests.base;
+package com.coherent.training.selenium.stanila.tests;
 
 import com.coherent.training.selenium.stanila.base.DriverFactory;
 import org.testng.annotations.AfterMethod;
@@ -13,7 +13,7 @@ public class BaseTest {
         DriverFactory.setDriver();
         DriverFactory.getDriver().get("https://mail.yandex.com/");
         DriverFactory.getDriver().manage().window().maximize();
-        DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+        DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
     }
 
     @AfterMethod

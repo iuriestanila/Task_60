@@ -3,6 +3,7 @@ package com.coherent.training.selenium.stanila.tests;
 import com.coherent.training.selenium.stanila.base.DriverFactory;
 import com.coherent.training.selenium.stanila.base.pages.LogoutPOM;
 import com.coherent.training.selenium.stanila.tests.utils.EncryptionAes;
+import com.coherent.training.selenium.stanila.tests.utils.ReadFile;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,8 +19,7 @@ public class LogoutTest extends BaseTest {
     public void logoutTest(){
         driver = DriverFactory.getDriver();
         logoutPOM = new LogoutPOM(driver);
-        encryptionAes = new EncryptionAes("testTestSelenium");
-
+        encryptionAes = new EncryptionAes(ReadFile.readProperties());
         String pswdDecrypted = encryptionAes.decrypt(PASSWORD_CREDENTIAL);
 
         logoutPOM.logout(USERNAME_CREDENTIAL,pswdDecrypted);

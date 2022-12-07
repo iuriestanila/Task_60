@@ -9,6 +9,7 @@ public class CustomListener extends BaseTest implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
+        Screenshot.screenshotPerform(result.getName());
     }
 
     @Override

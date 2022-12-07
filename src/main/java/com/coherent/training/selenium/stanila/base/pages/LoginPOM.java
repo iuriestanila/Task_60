@@ -6,8 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPOM extends BasePOM {
-    @FindBy(xpath = "//button[@class='Button2 Button2_size_m Button2_view_orange " +
-            "Button2_weight_500 Button_3YGxEShvAi7lB8DLgdG3y8 PSHeader-NoLoginButton']")
+    @FindBy(xpath = "//span[.='Log in']/ancestor::button")
     private WebElement loginFirst;
     @FindBy(id = "passp-field-login")
     private WebElement username;
@@ -29,7 +28,6 @@ public class LoginPOM extends BasePOM {
         login.click();
         password.sendKeys(pswd);
         login.click();
-        Thread.sleep(4000);
     }
     public boolean composeIsDisplayed() {
         return compose.isDisplayed();

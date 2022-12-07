@@ -3,6 +3,7 @@ package com.coherent.training.selenium.stanila.tests;
 import com.coherent.training.selenium.stanila.base.DriverFactory;
 import com.coherent.training.selenium.stanila.base.pages.LoginPOM;
 import com.coherent.training.selenium.stanila.tests.utils.EncryptionAes;
+import com.coherent.training.selenium.stanila.tests.utils.ReadFile;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,12 +18,10 @@ public class LoginTest extends BaseTest{
     public void testLogin() {
         driver = DriverFactory.getDriver();
         loginPOM = new LoginPOM(driver);
-        encryptionAes = new EncryptionAes("testTestSelenium");
-
+        encryptionAes = new EncryptionAes(ReadFile.readProperties());
         String pswdDecrypted = encryptionAes.decrypt(PASSWORD_CREDENTIAL);
 
         loginPOM.login(USERNAME_CREDENTIAL,pswdDecrypted);
         Assert.assertTrue(loginPOM.composeIsDisplayed(),"Compose button isn't displayed.");
-        //Assert.assertTrue(false); //uncomment to verify Listeners
     }
 }

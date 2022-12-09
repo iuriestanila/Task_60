@@ -8,9 +8,10 @@ import java.util.Properties;
 public class ReadFile {
 
     @SneakyThrows
-    public static String readProperties(){
+    public static String readProperties(String name){
         Properties properties = new Properties();
         properties.load(new FileInputStream("src/main/resources/data.properties"));
-        return properties.getProperty("key");
+        String dataNeeded = properties.getProperty(name);
+        return dataNeeded;
     }
 }

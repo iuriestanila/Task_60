@@ -1,5 +1,6 @@
 package com.coherent.training.selenium.stanila.base.pages;
 
+import io.qameta.allure.Step;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +22,7 @@ public class LoginPOM extends BasePOM {
         super(driver);
     }
 
+    @Step("Login step")
     @SneakyThrows
     public void login(String userName, String pswd){
         loginFirst.click();
@@ -29,6 +31,7 @@ public class LoginPOM extends BasePOM {
         password.sendKeys(pswd);
         login.click();
     }
+    @Step("Verify if control button is displayed")
     public boolean composeIsDisplayed() {
         return compose.isDisplayed();
     }

@@ -1,5 +1,6 @@
 package com.coherent.training.selenium.stanila.base.pages;
 
+import io.qameta.allure.Step;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,6 +26,7 @@ public class LogoutPOM extends BasePOM {
         super(driver);
     }
 
+    @Step("Logout step")
     @SneakyThrows
     public void logout(String usname, String pswd){
         loginFirst.click();
@@ -36,6 +38,7 @@ public class LogoutPOM extends BasePOM {
         logout.click();
     }
 
+    @Step("Verify if the chosen text is displayed")
     public boolean textForAssertIsDisplayed() {
         return textForAssert.isDisplayed();
     }

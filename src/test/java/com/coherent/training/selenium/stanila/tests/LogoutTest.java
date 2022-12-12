@@ -6,6 +6,7 @@ import com.coherent.training.selenium.stanila.tests.utils.EncryptionAes;
 import com.coherent.training.selenium.stanila.tests.utils.ReadFile;
 import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -31,7 +32,7 @@ public class LogoutTest extends BaseTest {
 
         logoutPOM.logout(USERNAME_CREDENTIAL,pswdDecrypted);
 
-        //Assert.assertTrue(logoutPOM.textForAssertIsDisplayed(),"Text for Assert isn't displayed.");
-        Assert.assertTrue(false); //for failing purposes
+        Assert.assertTrue(logoutPOM.textForAssertIsDisplayed(),"Text for Assert isn't displayed.");
+        //Assert.assertTrue(false); //for failing purposes
     }
 }

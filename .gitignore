@@ -16,3 +16,4 @@ target/
 
 src/main/resources/chromedriver.exe
 src/main/resources/data.properties
+allure-results

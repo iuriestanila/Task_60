@@ -10,29 +10,29 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
 
 public class DriverFactory {
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-    private static final String hubUrl = "http://192.168.0.11:4444/wd/hub";
-    @SneakyThrows
-    public static void setDriver()  {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+//    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+//    private static final String hubUrl = "http://192.168.0.11:4444/wd/hub";
+//    @SneakyThrows
+//    public static void setDriver()  {
+//        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+//
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setBrowserName("chrome");
+//        capabilities.setPlatform(Platform.WIN10);
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.merge(capabilities);
+//
+//
+//        WebDriver driverRemote = new RemoteWebDriver(new URL(hubUrl),chromeOptions);
+//        driver.set(driverRemote);
+//    }
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        capabilities.setPlatform(Platform.WIN10);
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.merge(capabilities);
-
-
-        WebDriver driverRemote = new RemoteWebDriver(new URL(hubUrl),chromeOptions);
-        driver.set(driverRemote);
-    }
-
-    public  static WebDriver getDriver(){
-        return driver.get();
-    }
-
-    public  static void closeBrowser(){
-        driver.get().close();
-        driver.remove();
-    }
+//    public  static WebDriver getDriver(){
+//        return driver.get();
+//    }
+//
+//    public  static void closeBrowser(){
+//        driver.get().close();
+//        driver.remove();
+//    }
 }

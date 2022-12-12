@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest{
         String pswdDecrypted = encryptionAes.decrypt(PASSWORD_CREDENTIAL);
 
         loginPOM.login(USERNAME_CREDENTIAL,pswdDecrypted);
-        Assert.assertTrue(loginPOM.composeIsDisplayed(),"Compose button isn't displayed.");
-        //Assert.assertTrue(false); //for failing purposes
+        //Assert.assertTrue(loginPOM.composeIsDisplayed(),"Compose button isn't displayed.");
+        Assert.assertTrue(false); //for failing purposes
     }
 }

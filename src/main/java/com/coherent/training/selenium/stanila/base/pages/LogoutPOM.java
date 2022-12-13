@@ -1,13 +1,13 @@
 package com.coherent.training.selenium.stanila.base.pages;
 
+import io.qameta.allure.Step;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LogoutPOM extends BasePOM {
-    @FindBy(xpath = "//button[@class='Button2 Button2_size_m Button2_view_orange " +
-            "Button2_weight_500 Button_3YGxEShvAi7lB8DLgdG3y8 PSHeader-NoLoginButton']")
+    @FindBy(xpath = "//span[.='Log in']/ancestor::button")
     private WebElement loginFirst;
     @FindBy(id = "passp-field-login")
     private WebElement username;
@@ -26,6 +26,7 @@ public class LogoutPOM extends BasePOM {
         super(driver);
     }
 
+    @Step("Logout step")
     @SneakyThrows
     public void logout(String usname, String pswd){
         loginFirst.click();
@@ -33,11 +34,11 @@ public class LogoutPOM extends BasePOM {
         login.click();
         password.sendKeys(pswd);
         login.click();
-        Thread.sleep(4000);
         image.click();
         logout.click();
     }
 
+    @Step("Verify if the chosen text is displayed")
     public boolean textForAssertIsDisplayed() {
         return textForAssert.isDisplayed();
     }

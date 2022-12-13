@@ -1,6 +1,5 @@
 package com.coherent.training.selenium.stanila.base.pages;
 
-import com.coherent.training.selenium.stanila.base.BasePOM;
 import lombok.SneakyThrows;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

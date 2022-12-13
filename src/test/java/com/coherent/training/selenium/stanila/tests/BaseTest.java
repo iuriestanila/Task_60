@@ -1,7 +1,6 @@
 package com.coherent.training.selenium.stanila.tests;
 
-import com.coherent.training.selenium.stanila.base.DriverFactory;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import com.coherent.training.selenium.stanila.base.utils.DriverFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 

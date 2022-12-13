@@ -1,6 +1,7 @@
 package com.coherent.training.selenium.stanila.tests.utils;
 
-import com.coherent.training.selenium.stanila.base.DriverFactory;
+import com.coherent.training.selenium.stanila.base.utils.DriverFactory;
+import com.coherent.training.selenium.stanila.base.utils.ReadFile;
 import com.coherent.training.selenium.stanila.tests.BaseTest;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;

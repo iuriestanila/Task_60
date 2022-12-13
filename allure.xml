@@ -5,7 +5,7 @@
     <listeners>
         <listener class-name="com.coherent.training.selenium.stanila.tests.utils.AllureListener"></listener>
     </listeners>
-    <test name="yandex">
+    <test thread-count="2" parallel="classes" name="yandex">
         <classes>
             <class name="com.coherent.training.selenium.stanila.tests.LoginTest"/>
 <!--            <class name="com.coherent.training.selenium.stanila.tests.LogoutTest"/>-->

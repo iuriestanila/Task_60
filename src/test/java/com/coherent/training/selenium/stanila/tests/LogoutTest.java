@@ -1,9 +1,9 @@
 package com.coherent.training.selenium.stanila.tests;
 
-import com.coherent.training.selenium.stanila.base.DriverFactory;
+import com.coherent.training.selenium.stanila.base.utils.DriverFactory;
 import com.coherent.training.selenium.stanila.base.pages.LogoutPOM;
-import com.coherent.training.selenium.stanila.tests.utils.EncryptionAes;
-import com.coherent.training.selenium.stanila.tests.utils.ReadFile;
+import com.coherent.training.selenium.stanila.base.utils.EncryptionAes;
+import com.coherent.training.selenium.stanila.base.utils.ReadFile;
 import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -26,12 +26,12 @@ public class LogoutTest extends BaseTest {
     public void logoutTest(){
         driver = DriverFactory.getDriver();
         logoutPOM = new LogoutPOM(driver);
-        encryptionAes = new EncryptionAes(ReadFile.readProperties("key"));
+        encryptionAes = new EncryptionAes(ReadFile.readClassified("key"));
         String pswdDecrypted = encryptionAes.decrypt(PASSWORD_CREDENTIAL);
 
         logoutPOM.logout(USERNAME_CREDENTIAL,pswdDecrypted);
 
-        //Assert.assertTrue(logoutPOM.textForAssertIsDisplayed(),"Text for Assert isn't displayed.");
-        Assert.assertTrue(false); //for failing purposes
+        Assert.assertTrue(logoutPOM.textForAssertIsDisplayed(),"Text for Assert isn't displayed.");
+        //Assert.assertTrue(false); //for failing purposes
     }
 }

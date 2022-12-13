@@ -1,4 +1,4 @@
-package com.coherent.training.selenium.stanila.tests.utils;
+package com.coherent.training.selenium.stanila.base.utils;
 
 import lombok.SneakyThrows;
 

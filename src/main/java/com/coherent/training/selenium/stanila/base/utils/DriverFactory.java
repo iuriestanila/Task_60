@@ -15,8 +15,8 @@ public class DriverFactory {
 
     @SneakyThrows
     public static void setDriver()  {
-        System.setProperty(ReadFile.readProperties("driverChrome"),
-                ReadFile.readProperties("chromeDriverPath"));
+        System.setProperty(ReadFile.read("driverChrome"),
+                ReadFile.read("chromeDriverPath"));
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("chrome");
@@ -24,7 +24,7 @@ public class DriverFactory {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.merge(capabilities);
 
-        WebDriver driverRemote = new RemoteWebDriver(new URL(ReadFile.readProperties("hubURL")), chromeOptions);
+        WebDriver driverRemote = new RemoteWebDriver(new URL(ReadFile.read("hubURL")), chromeOptions);
         driver.set(driverRemote);
     }
 

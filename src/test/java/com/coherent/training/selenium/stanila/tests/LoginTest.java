@@ -26,7 +26,7 @@ public class LoginTest extends BaseTest{
     public void testLogin() {
         driver = DriverFactory.getDriver();
         loginPOM = new LoginPOM(driver);
-        encryptionAes = new EncryptionAes(ReadFile.readProperties("key"));
+        encryptionAes = new EncryptionAes(ReadFile.readClassified("key"));
         String pswdDecrypted = encryptionAes.decrypt(PASSWORD_CREDENTIAL);
 
         loginPOM.login(USERNAME_CREDENTIAL,pswdDecrypted);

@@ -56,7 +56,7 @@ public class AllureListener extends BaseTest implements ITestListener {
         saveTextLog(result.getMethod().getConstructorOrMethod().getName());
 
         Allure.step("Type of the browser", () -> {
-            Allure.attachment("Browser", ReadFile.readProperties("browserData"));
+            Allure.attachment("Browser", ReadFile.read("browserData"));
         });
     }
 

@@ -26,7 +26,7 @@ public class LogoutTest extends BaseTest {
     public void logoutTest(){
         driver = DriverFactory.getDriver();
         logoutPOM = new LogoutPOM(driver);
-        encryptionAes = new EncryptionAes(ReadFile.readProperties("key"));
+        encryptionAes = new EncryptionAes(ReadFile.readClassified("key"));
         String pswdDecrypted = encryptionAes.decrypt(PASSWORD_CREDENTIAL);
 
         logoutPOM.logout(USERNAME_CREDENTIAL,pswdDecrypted);
